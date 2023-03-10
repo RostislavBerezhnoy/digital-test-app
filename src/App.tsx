@@ -1,15 +1,20 @@
-import React from 'react'
-import { FileViewer } from 'drivers'
-
-/* 
-const files: { path: string; type: string }[] = [
-  { path: 'http://localhost:3000/files/sample.docx', type: 'docx' },
-  { path: 'http://localhost:3000/files/sample.pdf', type: 'pdf' },
-  { path: 'http://localhost:3000/files/sample.png', type: 'png' },
-] */
+import React, { useState } from 'react'
+import { FileViewer, FileViewerProps } from 'drivers'
+import { docx, pdf, png } from './mocks'
 
 function App() {
-  return <FileViewer type='docx' url='http://localhost:3000/files/sample.docx' />
+  const [file, setFile] = useState<FileViewerProps>(docx)
+
+  return (
+    <div style={{ padding: 20 }}>
+      <div style={{ display: 'flex', marginBottom: 30 }}>
+        <button onClick={() => setFile(docx)}>show docx</button>
+        <button onClick={() => setFile(pdf)}>show pdf</button>
+        <button onClick={() => setFile(png)}>show png</button>
+      </div>
+      <FileViewer {...file} />
+    </div>
+  )
 }
 
 export default App

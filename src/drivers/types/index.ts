@@ -1,4 +1,8 @@
 export type FileViewerProps = {
   url: string
-  type: 'docx' | 'pdf' | 'png'
+  type: DocType | PdfType | ImgType
 }
+
+export type DocType = 'doc' | 'docx' | 'rtf'
+export type PdfType = 'pdf'
+export type ImgType = 'jpg' | 'jpeg' | 'gif' | 'png' | 'bmp'

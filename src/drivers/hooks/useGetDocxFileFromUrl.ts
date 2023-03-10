@@ -12,8 +12,8 @@ const getDocxFileFromUrl = async (fileUrl: string): Promise<any> => {
     })
 
     return data
-  } catch {
-    throw new Error('Request error')
+  } catch (error) {
+    throw new Error(`Docs request error: ${error}`)
   }
 }
 

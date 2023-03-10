@@ -1,5 +1,5 @@
-import { FileViewerProps } from 'drivers/types'
+import { DocType, PdfType, ImgType } from 'drivers/types'
 
-export const DOCX_TYPE: FileViewerProps['type'] = 'docx'
-export const PNG_TYPE: FileViewerProps['type'] = 'png'
-export const PDF_TYPE: FileViewerProps['type'] = 'pdf'
+export const PDF_TYPE: PdfType = 'pdf'
+export const IMG_TYPE: ImgType[] = ['jpg', 'jpeg', 'gif', 'png', 'bmp']
+export const DOCS_TYPE: DocType[] = ['doc', 'docx', 'rtf']

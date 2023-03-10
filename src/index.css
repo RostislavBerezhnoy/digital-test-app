@@ -6,3 +6,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+button {
+  border-color: #1976d2;
+  background-color: #1976d2;
+  color: white;
+  text-transform: uppercase;
+  padding: 10px 60px;
+  border-radius: 5px;
+  margin: 0 10px;
+  cursor: pointer;
+}
