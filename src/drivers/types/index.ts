@@ -3,6 +3,9 @@ export type FileViewerProps = {
   type: DocType | PdfType | ImgType
 }
 
-export type DocType = 'doc' | 'docx' | 'rtf'
+export type UrlProps = Omit<FileViewerProps, 'type'>
+export type TypeProps = Omit<FileViewerProps, 'url'>
+
+export type DocType = 'docx'
 export type PdfType = 'pdf'
 export type ImgType = 'jpg' | 'jpeg' | 'gif' | 'png' | 'bmp'

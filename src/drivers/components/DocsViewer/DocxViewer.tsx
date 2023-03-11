@@ -1,14 +1,11 @@
 import { FC } from 'react'
 import { useGetDocxFileFromUrl } from 'drivers/hooks/useGetDocxFileFromUrl'
 import { useGetParsedHtmlFromDocxFile } from 'drivers/hooks/useGetParsedHtmlFromDocxFile'
+import { UrlProps } from 'drivers/types'
 
-export type DocxViwerProps = {
-  url: string
-}
-
-export const DocxViwer: FC<DocxViwerProps> = ({ url }) => {
+export const DocxViwer: FC<UrlProps> = ({ url }) => {
   const { data: file } = useGetDocxFileFromUrl(url)
   const html = useGetParsedHtmlFromDocxFile(file)
 
-  return <div dangerouslySetInnerHTML={{ __html: html }} />
+  return <div dangerouslySetInnerHTML={{ __html: html }} style={{ width: '100%', maxWidth: 800 }} />
 }

@@ -12,7 +12,9 @@ function App() {
         <button onClick={() => setFile(pdf)}>show pdf</button>
         <button onClick={() => setFile(png)}>show png</button>
       </div>
-      <FileViewer {...file} />
+      <div style={{ margin: '0 10px' }}>
+        <FileViewer {...file} />
+      </div>
     </div>
   )
 }

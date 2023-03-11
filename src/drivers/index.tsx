@@ -1,2 +1,6 @@
 export * from './FileViewer'
 export * from './types'
+export * from './components/DocsViewer'
+export * from './components/ImageViewer'
+export * from './components/PdfViewer'
+export * from './utils/guards'

@@ -1,12 +1,9 @@
 import { FC, useRef } from 'react'
 import { useGetPdfFromUrl } from 'drivers/hooks/useGetPdfFromUrl'
 import { PdfPage } from './PdfPage'
+import { UrlProps } from 'drivers/types'
 
-export type PdfViewerProps = {
-  url: string
-}
-
-export const PdfViewer: FC<PdfViewerProps> = ({ url }) => {
+export const PdfViewer: FC<UrlProps> = ({ url }) => {
   const container = useRef<HTMLInputElement>(null)
   const { data: pdf } = useGetPdfFromUrl(url)
 
@@ -26,14 +23,11 @@ export const PdfViewer: FC<PdfViewerProps> = ({ url }) => {
   }
 
   return (
-    <div className='pdf-viewer-container'>
-      <div
-        className='pdf-viewer'
-        ref={container}
-        style={{ display: 'flex', flexDirection: 'column', width: '100%', maxWidth: 800 }}
-      >
-        {renderPages()}
-      </div>
+    <div
+      ref={container}
+      style={{ display: 'flex', flexDirection: 'column', width: '100%', maxWidth: 800 }}
+    >
+      {renderPages()}
     </div>
   )
 }
