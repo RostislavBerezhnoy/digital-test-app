@@ -7,5 +7,5 @@ export const DocxViwer: FC<UrlProps> = ({ url }) => {
   const { data: file } = useGetDocxFileFromUrl(url)
   const html = useGetParsedHtmlFromDocxFile(file)
 
-  return <div dangerouslySetInnerHTML={{ __html: html }} style={{ width: '100%', maxWidth: 800 }} />
+  return <div dangerouslySetInnerHTML={{ __html: html }} />
 }

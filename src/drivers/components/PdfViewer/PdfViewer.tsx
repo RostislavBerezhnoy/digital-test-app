@@ -23,10 +23,7 @@ export const PdfViewer: FC<UrlProps> = ({ url }) => {
   }
 
   return (
-    <div
-      ref={container}
-      style={{ display: 'flex', flexDirection: 'column', width: '100%', maxWidth: 800 }}
-    >
+    <div ref={container} style={{ display: 'flex', flexDirection: 'column' }}>
       {renderPages()}
     </div>
   )
